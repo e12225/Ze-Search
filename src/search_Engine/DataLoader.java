@@ -2,6 +2,11 @@ package search_Engine;
 
 import org.json.simple.JSONArray;
 
+/**
+ * DataLoader is used to pass the user given inputs ( category, field, value ) to the next level (to the DataFilter) , in which the data filtering
+ * takes place
+ */
+
 public class DataLoader {
 
     public JSONArray loadData(Object users, Object organizations, Object tickets, String category, String field, Object value)

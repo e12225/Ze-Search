@@ -1,12 +1,8 @@
 package search_Engine;
 
 import org.json.simple.JSONArray;
-import search_Engine.filters.OrganizationFilter;
-import search_Engine.filters.TicketFilter;
-import search_Engine.filters.UserFilter;
 
 public class DataLoader {
-
 
     public JSONArray loadData(Object users, Object organizations, Object tickets, String category, String field, Object value)
     {
@@ -14,22 +10,24 @@ public class DataLoader {
         JSONArray orgJSON = (JSONArray) organizations;
         JSONArray ticketJSON = (JSONArray) tickets;
 
-        JSONArray searchResults = new JSONArray();
+        JSONArray searchResults = null;
 
-        if (category.equalsIgnoreCase("Users"))
+        if (category != null && !category.isEmpty() && !((JSONArray) users).isEmpty() && !((JSONArray) organizations).isEmpty() && !((JSONArray) tickets).isEmpty())
         {
-            UserFilter userFilter = new UserFilter();
-            searchResults = userFilter.getUsers(field, value, userJSON);
-        }
-        else if (category.equalsIgnoreCase("Organizations"))
-        {
-            OrganizationFilter organizationFilter = new OrganizationFilter();
-            searchResults = organizationFilter.getOrganizations(field, value, orgJSON);
-        }
-        else
-        {
-            TicketFilter ticketFilter = new TicketFilter();
-            searchResults = ticketFilter.getTickets(field, value, ticketJSON);
+            DataFilter dataFilter = new DataFilter();
+
+            if (category.equalsIgnoreCase("Users"))
+            {
+                searchResults = dataFilter.selectData(field, value, userJSON);
+            }
+            else if (category.equalsIgnoreCase("Organizations"))
+            {
+                searchResults = dataFilter.selectData(field, value, orgJSON);
+            }
+            else
+            {
+                searchResults = dataFilter.selectData(field, value, ticketJSON);
+            }
         }
 
         return searchResults;

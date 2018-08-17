@@ -15,27 +15,28 @@ import java.util.Scanner;
 public class Core {
 
     public static void main(String[] args) {
-        System.out.println("Welcome to Ze-Search Engine !!!");
+        System.out.println("Welcome to Ze-Search Engine !!!\n");
+        System.out.println("-------------------------------");
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please specify the path to users.json data source");
         String users = scanner.nextLine();
-        while (scanner.nextLine().equals("\n"))
+        while (users.equals("\n"))
         {
             users = scanner.nextLine();
         }
 
         System.out.println("\nPlease specify the path to organizations.json data source");
         String organizations = scanner.nextLine();
-        while (scanner.nextLine().equals("\n"))
+        while (organizations.equals("\n"))
         {
             organizations = scanner.nextLine();
         }
 
         System.out.println("\nPlease specify the path to tickets.json data source");
         String tickets = scanner.nextLine();
-        while (scanner.nextLine().equals("\n"))
+        while (tickets.equals("\n"))
         {
             tickets = scanner.nextLine();
         }
@@ -80,7 +81,7 @@ public class Core {
             String field = scanner.nextLine();
             while (field.isEmpty() || field == null)
             {
-                System.out.println("\nWARNING: Field is empty. Please enter a valid field !");
+                System.out.println("\nWARNING: Field is empty. Please enter a field !");
                 field = scanner.nextLine();
             }
 
@@ -104,7 +105,7 @@ public class Core {
                     System.out.println(gson.toJson(je));
                 } else
                 {
-                    System.out.println("\nNo results found for the given parameters !");
+                    System.out.println("\nINFO: No results found for the given parameters !");
                 }
             }
             else

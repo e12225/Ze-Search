@@ -17,9 +17,9 @@ public class DataLoaderTest {
         DataLoader dataLoader = new DataLoader();
         JSONParser jsonParser = new JSONParser();
 
-        Object usersObj = jsonParser.parse(new FileReader("C:\\Users\\DELL\\Desktop\\Australian Migration\\AFTER ARRIVAL\\Job Hunting\\Zendesk Coding Challenge\\Ze-Search\\tests\\search_Engine\\users_test.json"));
-        Object orgsObj = jsonParser.parse(new FileReader("C:\\Users\\DELL\\Desktop\\Australian Migration\\AFTER ARRIVAL\\Job Hunting\\Zendesk Coding Challenge\\Ze-Search\\tests\\search_Engine\\organizations_test.json"));
-        Object ticketsObj = jsonParser.parse(new FileReader("C:\\Users\\DELL\\Desktop\\Australian Migration\\AFTER ARRIVAL\\Job Hunting\\Zendesk Coding Challenge\\Ze-Search\\tests\\search_Engine\\tickets_test.json"));
+        Object usersObj = jsonParser.parse(new FileReader("Enter the file path to users.json here"));
+        Object orgsObj = jsonParser.parse(new FileReader("Enter the file path to organizations.json here"));
+        Object ticketsObj = jsonParser.parse(new FileReader("Enter the file path to tickets.json here"));
 
         DataFilter dataFilter = new DataFilter();
         /**

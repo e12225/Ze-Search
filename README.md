@@ -15,6 +15,9 @@ Ze-Search Application Exercising Guide
 	Ex: If you are using IntelliJ, when the project is opened, navigate to File > Project Structure > Project Settings > Modules > click the Dependencies tab.
 		Then, click the + button, select the 'JARs or Directories' option and select the jar files. Apply the changes and click OK.
 	
+*** NOTE *** : Make sure to set your local paths for 'users.json', 'organizations.json' and 'tickets.json' files as the DataLoaderTest.java class's 
+           FileReader() arguments, before compiling the code.	
+	
 3.) Compile (Ctrl + Shift + F9) and run (Ctrl + Shift + F10) the application.
 
     Class compiling order : i. DataFilter.java
